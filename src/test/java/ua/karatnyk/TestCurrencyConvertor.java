@@ -73,6 +73,24 @@ public class TestCurrencyConvertor {
 
     // tests boite blanche
 
+    // test critère de couverture des arcs du graphe de flot de contrôle
+
+
+    @Test
+    public void test_arc_flot_whenConditionTrue() throws ParseException {
+        Exception exception = assertThrows(Exception.class,()-> CurrencyConvertor.convert(20000000,"CAD","USD",new OfflineJsonWorker().parser()));
+        assertEquals("Not correct format currency"
+                + "" , exception.getMessage());
+    }
+
+    @Test
+    public void test_arc_flot_whenConditionFalse() throws ParseException {
+        var casTest = CurrencyConvertor.convert(20 ,"CAD","USD",new OfflineJsonWorker().parser());
+        assertEquals(14.87707108498129 , casTest);
+
+
+    }
+
     // test couverture condition
     @Test
     public void test_couverture_conditions() throws ParseException {
