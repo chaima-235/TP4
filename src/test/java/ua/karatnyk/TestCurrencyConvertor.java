@@ -73,9 +73,6 @@ public class TestCurrencyConvertor {
 
     // tests boite blanche
 
-    // test critère de couverture des arcs du graphe de flot de contrôle
-
-
     @Test
     public void test_arc_flot_whenConditionTrue() throws ParseException {
         Exception exception = assertThrows(Exception.class,()-> CurrencyConvertor.convert(20000000,"CAD","USD",new OfflineJsonWorker().parser()));
@@ -90,6 +87,9 @@ public class TestCurrencyConvertor {
 
 
     }
+
+    // test critère de couverture des arcs du graphe de flot de contrôle
+
 
     // test couverture condition
     @Test
